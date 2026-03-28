@@ -1,3 +1,7 @@
+#Bruno Nardoni Moschetta
+#RA1 18
+
+
 from lexer import analisaLex, ERROLEX
 from tokens import TOKENRPAREN, TOKENLPAREN
 #1 BALANCEAR PARENTESES
@@ -15,12 +19,12 @@ def balancParen(tokens): #lparen -> empilha rparen -> desenp
 
     for token in tokens:
         if token["tipo"] == TOKENLPAREN:                                 #EXPLICACAO
-            pilha.append(token["posicao"])                              #1. COMO O O PARENTESE LEFT EMPILHA...
+            pilha.append(token["pos"])                              #1. COMO O O PARENTESE LEFT EMPILHA...
 
         elif token["tipo"] == TOKENRPAREN:                               #2. E O PARENTESE RIGHT DESEMPILHA...
                 if len(pilha) == 0:                                           #3. SE A PILHA ESTIVER VAZIA E ENCONTRAR "" ) "" É PQ ELE NAO TEM SEU CORRESPONDENTE PARA DESEMPILHAR OU SEJA "" ( ""
                     raise ERROPARSE(
-                        "Erro sintatico na posicao " + str(token["posicao"]) +
+                        "Erro sintatico na posicao " + str(token["pos"]) +
                         ": ')' sem '(' correspondente"
                     )
                 pilha.pop()
