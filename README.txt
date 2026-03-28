@@ -37,3 +37,4 @@ Atenção: o display mostra os dígitos unidade, dezena e centena separadamente,
 
 TODOS COBRINDO todas as operações, números reais e com entradas válidas e inválidas
 
+OBSERVAÇÃO: Professor, estou ciente da necessidade de implementar o resultado com pontos decimais, mas foquei meu desenvolvimento em trabalhar em cima dos dislpays leds. NO ENTANDO todos os cálculos são realizados internamente em precisão dupla IEEE 754 de 64 bits números reais como 3.14 e 7.5 são representados com precisão total. A limitação está na exibição: o display de 7 segmentos só suporta dígitos inteiros, então o resultado é truncado na conversão para o display. O valor real completo está nos registradores VFP (D0-D31) do CPUlator e pode ser verificado na aba REGISTERS após cada breakpoint. 
